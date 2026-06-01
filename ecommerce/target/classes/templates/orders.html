@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Orders</title>
+</head>
+<body>
+
+<h1>Previous Orders</h1>
+
+<hr>
+
+<div th:each="order : ${orders}">
+
+    <p>
+        Product :
+        <span th:text="${order.productName}"></span>
+    </p>
+
+    <p>
+        Date :
+        <span th:text="${order.orderDate}"></span>
+    </p>
+
+    <hr>
+
+</div>
+
+<a href="/home">
+    Back To Home
+</a>
+
+</body>
+</html>

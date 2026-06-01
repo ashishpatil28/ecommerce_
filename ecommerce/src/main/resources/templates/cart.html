@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cart</title>
+</head>
+<body>
+
+<h1>My Cart</h1>
+
+<hr>
+
+<div th:if="${#lists.isEmpty(items)}">
+    <h3>Cart is Empty</h3>
+</div>
+
+<div th:each="item : ${items}">
+
+    <p>
+        Product Id :
+        <span th:text="${item.productId}"></span>
+    </p>
+
+    <p>
+        Quantity :
+        <span th:text="${item.quantity}"></span>
+    </p>
+
+    <hr>
+
+</div>
+
+<br>
+
+<a href="/home">
+    <button>Continue Shopping</button>
+</a>
+
+&nbsp;&nbsp;
+
+<a href="/checkout">
+    <button>Checkout</button>
+</a>
+
+</body>
+</html>

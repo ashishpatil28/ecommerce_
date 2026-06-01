@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<h1>Online Store</h1>
+
+<a href="/cart">Cart</a>
+<a href="/orders">Orders</a>
+
+<hr>
+
+<div th:each="product : ${products}">
+
+    <h2 th:text="${product.name}"></h2>
+
+    <p th:text="${product.description}"></p>
+
+    <p>
+        Price :
+        <span th:text="${product.price}"></span>
+    </p>
+
+    <a th:href="@{/product(id=${product.id})}">
+        View Product
+    </a>
+
+    <hr>
+
+</div>
+
+</body>
+</html>

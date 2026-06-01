@@ -1,0 +1,12 @@
+package com.ashish.ecommerce.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ashish.ecommerce.entity.OrderItem;
+
+public interface OrderRepository extends JpaRepository<OrderItem, Long> {
+
+    List<OrderItem> findAll();
+}
